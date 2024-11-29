@@ -3,42 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Test Website</title>
+    <title>iPhone 15 Pro - Demo</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
-        h1 {
-            color: #333;
-            text-align: center;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+
+        body {
+            background-color: #000;
+            color: #fff;
+            line-height: 1.5;
         }
-        .content {
-            max-width: 800px;
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1000px;
             margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h2 {
-            color: #444;
+
+        .nav-links a {
+            color: #f5f5f7;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
         }
-        p {
-            color: #666;
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: url('/api/placeholder/1200/800') center/cover no-repeat;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            background-color: #0071e3;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 1.5rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0077ed;
+        }
+
+        .features {
+            padding: 6rem 2rem;
+        }
+
+        .feature {
+            max-width: 800px;
+            margin: 0 auto 8rem auto;
+            text-align: center;
+        }
+
+        .feature img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .feature h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #1d1d1f;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+
+            .nav-links a {
+                margin-left: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <div class="content">
-        <h2>About Us</h2>
-        <p>This is a test page created for demonstration purposes.</p>
-    </div>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">⌘</div>
+            <div class="nav-links">
+                <a href="#">Store</a>
+                <a href="#">Mac</a>
+                <a href="#">iPad</a>
+                <a href="#">iPhone</a>
+                <a href="#">Watch</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>iPhone 15 Pro</h1>
+        <h2>Titanium. So strong. So light. So Pro.</h2>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button">Buy</a>
+            <a href="#" class="cta-button">Learn more ></a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="/api/placeholder/600/400" alt="iPhone Feature">
+            <h3>A17 Pro chip</h3>
+            <p>Game‑changing chip. Groundbreaking performance.</p>
+        </div>
+
+        <div class="feature">
+            <img src="/api/placeholder/600/400" alt="Camera Feature">
+            <h3>Pro camera system</h3>
+            <p>Push the boundaries of what's possible with a smartphone camera.</p>
+        </div>
+
+        <div class="feature">
+            <img src="/api/placeholder/600/400" alt="Design Feature">
+            <h3>Titanium design</h3>
+            <p>Aerospace‑grade titanium. The lightest Pro ever.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright © 2024 Demo Website. All rights reserved. This is a demo inspired by Apple's design.</p>
+    </footer>
 </body>
 </html>
