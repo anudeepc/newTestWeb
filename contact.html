@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BN Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-page {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-method {
+            margin-bottom: 2rem;
+        }
+
+        .contact-method h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .availability {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="logo">BN Solutions</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="expertise.html">Expertise</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html" class="nav-cta active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contact-page">
+        <h1>Get in Touch</h1>
+        <p>Let's discuss how we can optimize your Salesforce implementation</p>
+
+        <div class="contact-grid">
+            <div class="contact-form">
+                <div class="success-message" id="successMessage">
+                    Thank you for your message! I'll get back to you shortly.
+                </div>
+                <form id="contactForm" onsubmit="return handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-message" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="environment">Environment Management</option>
+                            <option value="implementation">Implementation Consulting</option>
+                            <option value="integration">Integration Services</option>
+                            <option value="training">Training & Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message" id="serviceError">Please select a service</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <div class="error-message" id="messageError">Please enter your message</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-method">
+                    <h3>Email</h3>
+                    <p>bhavananeelagiri@gmail.com</p>
+                </div>
+
+                <div class="contact-method">
+                    <h3>Phone</h3>
+                    <p>+61 415 735 904</p>
+                </div>
+
+                <div class="availability">
+                    <h3>Availability</h3>
+                    <p>Available for:</p>
+                    <ul>
+                        <li>Full project implementations</li>
+                        <li>Consulting services</li>
+                        <li>Environment optimization</li>
+                        <li>Training sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate
+            let isValid = true;
+            
+            if (!name) {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!service) {
+                document.getElementById('serviceError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!message) {
+                document.getElementById('messageError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // In a real implementation, you would send this data to a server
+                console.log('Form submitted:', { name, email, service, message });
+            }
+            
+            return false;
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>BN Solutions</h3>
+                <p>Expert Salesforce Consulting & Implementation Services</p>
+            </div>
+            <div class="footer-contact">
+                <p>Email: bhavananeelagiri@gmail.com</p>
+                <p>Phone: +61 415 735 904</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BN Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
