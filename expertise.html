@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise - BN Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .expertise-page {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .expertise-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .expertise-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tech-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .experience-timeline {
+            margin: 2rem 0;
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            border-left: 3px solid var(--primary);
+            margin-left: 1rem;
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--light);
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: -7.5px;
+            top: 2rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .highlights-list {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .highlights-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="logo">BN Solutions</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="expertise.html" class="active">Expertise</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html" class="nav-cta">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="expertise-page">
+        <div class="expertise-intro">
+            <h1>Professional Expertise</h1>
+            <p>Salesforce Environment Manager with proven track record in implementing and optimizing Salesforce solutions</p>
+        </div>
+
+        <div class="expertise-section">
+            <h2>Technical Proficiency</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Salesforce Platforms</h3>
+                    <ul class="highlights-list">
+                        <li>Sales Cloud</li>
+                        <li>Service Cloud</li>
+                        <li>Marketing Cloud</li>
+                        <li>Financial Services Cloud</li>
+                        <li>Health Cloud</li>
+                        <li>Salesforce CPQ</li>
+                        <li>Communities</li>
+                        <li>Pardot</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>Development & Tools</h3>
+                    <ul class="highlights-list">
+                        <li>APEX</li>
+                        <li>Visualforce</li>
+                        <li>JAVA</li>
+                        <li>HTML/CSS</li>
+                        <li>SOQL/SOSL</li>
+                        <li>AutoRABIT ALM</li>
+                        <li>ANT Migration Tool</li>
+                        <li>Salesforce CLI</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>Integration & Apps</h3>
+                    <ul class="highlights-list">
+                        <li>MuleSoft</li>
+                        <li>Azure Connector</li>
+                        <li>Marketing Cloud Connector</li>
+                        <li>Zapier</li>
+                        <li>SMS Magic</li>
+                        <li>Mail Chimp</li>
+                        <li>Conga Composer</li>
+                        <li>HubSpot</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="expertise-section">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <h3>Project Manager/Implementation Lead</h3>
+                    <p>May 2024 - Present</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Implementation</span>
+                        <span class="skill-tag">Team Leadership</span>
+                    </div>
+                    <ul class="highlights-list">
+                        <li>Lead complex Salesforce implementations</li>
+                        <li>Manage project timelines and resources</li>
+                        <li>Coordinate with stakeholders and development teams</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Salesforce Consultant/Lead</h3>
+                    <p>Jan 2023 – April 2024</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Solution Architecture</span>
+                        <span class="skill-tag">Consulting</span>
+                        <span class="skill-tag">Process Optimization</span>
+                    </div>
+                    <ul class="highlights-list">
+                        <li>Designed and implemented custom Salesforce solutions</li>
+                        <li>Provided strategic consultation to clients</li>
+                        <li>Optimized business processes and workflows</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Salesforce & Integration Lead</h3>
+                    <p>Jan 2021 – Jan 2023</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Integration</span>
+                        <span class="skill-tag">System Architecture</span>
+                        <span class="skill-tag">Team Management</span>
+                    </div>
+                    <ul class="highlights-list">
+                        <li>Led integration projects and system implementations</li>
+                        <li>Managed development team and project delivery</li>
+                        <li>Established best practices and standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="expertise-section">
+            <h2>Key Strengths</h2>
+            <ul class="highlights-list">
+                <li>Strategic environment management and optimization</li>
+                <li>Implementation consulting and solution architecture</li>
+                <li>Stakeholder management and communication</li>
+                <li>Process improvement and automation</li>
+                <li>Team leadership and mentoring</li>
+                <li>Project management and delivery</li>
+                <li>Change and release management</li>
+                <li>Security and compliance management</li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>Looking for Salesforce Expertise?</h2>
+        <p>Let's discuss how my experience can benefit your organization.</p>
+        <a href="contact.html" class="button primary">Get in Touch</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>BN Solutions</h3>
+                <p>Expert Salesforce Consulting & Implementation Services</p>
+            </div>
+            <div class="footer-contact">
+                <p>Email: bhavananeelagiri@gmail.com</p>
+                <p>Phone: +61 415 735 904</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BN Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
